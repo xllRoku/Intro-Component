@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap");
+
+/** globals **/
+
+html {
+  box-sizing: border-box;
+  /* font-size: 62.5%; 1REM = 10px */
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+input,
+button {
+  border: none;
+  background-color: transparent;
+}
+
+body {
+  font-family: var(--fnf-bdy);
+  background-color: var(--bkg-bdy-color);
+  background-image: url("/images/bg-intro-mobile.png");
+  /* transition: background-image 50ms; */
+}
+
+@media (min-width: 768px) {
+  body {
+    background-image: url("/images/bg-intro-desktop.png");
+  }
+}
+
+/** variables **/
+:root {
+  /** colors **/
+  --Red: hsl(0, 100%, 74%);
+  --Green: hsl(154, 59%, 51%);
+
+  --Blue: hsl(248, 32%, 49%);
+
+  --Dark-Blue: hsl(249, 10%, 26%);
+  --Grayish-Blue: hsl(246, 25%, 77%);
+
+  /** ========== font ========= **/
+
+  /** ===== font family ===== **/
+  --fnf-bdy: "Poppins", sans-serif;
+
+  /** ===== font size ===== **/
+  --heading-1: clamp(1.63rem, calc(1.23rem + 1.69vw), 2.75rem);
+
+  /** =====  color ===== **/
+  --color-hd-1: white;
+  --color-p: white;
+
+  /** spacing **/
+  /** 
+        top: 9.6 to 11.8 
+        lados: 2.4 to 15.8
+        bottom: 6.4 to 11.8
+    **/
+  --spc-bdy-top: clamp(6rem, calc(5.52rem + 2.07vw), 7.38rem);
+  --spc-bdy-sides: clamp(1.5rem, calc(-1.45rem + 12.58vw), 9.88rem);
+  --spc-bdy-bottom: clamp(4rem, calc(2.81rem + 5.07vw), 7.38rem);
+
+  --spc-frm: clamp(1.5rem, calc(1.19rem + 1.31vw), 2.38rem);
+
+  /** ========== templeating ========== **/
+
+  /** ===== body ===== **/
+  --bkg-bdy-color: var(--Red);
+
+  /** ===== components ===== **/
+
+  /** btns **/
+  --bkg-btn-primary: var(--Green);
+  --color-btn-primary: white;
+
+  /** offer **/
+  --bkg-offer: var(--Blue);
+
+  /** login **/
+  --bgk-frm: white;
+}
+
+/** ===== typography ===== **/
+
+h1 {
+  font-size: var(--heading-1);
+  color: var(--color-hd-1);
+}
+
+p {
+  color: var(--color-p);
+}
+
+.text-aling {
+  text-align: center;
+}
+@media (min-width: 1200px) {
+  .text-aling {
+    text-align: start;
+  }
+}
+
+/** ========== utility class ========== **/
+
+/** ===== layouts ===== **/
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.aling-center {
+  align-items: center;
+}
+
+.space-btw {
+  justify-content: space-between;
+}
+
+/** spacing **/
+
+.m-0 {
+  margin: 0;
+}
+
+.p-0 {
+  padding: 0;
+}
+
+/** ===== components ===== **/
+
+/** btns **/
+
+.btn-primary {
+  width: 100%;
+}
+
+.btn-primary > input {
+  /* display: block; */
+  width: 100%;
+  background-color: var(--bkg-btn-primary);
+  color: var(--color-btn-primary);
+  padding: 1.25rem 2.625rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+}
+
+/** offer **/
+
+.offer {
+  background-color: var(--bkg-offer);
+  padding: 1rem 4.688rem;
+  margin-bottom: 1.625rem;
+  text-align: center;
+  line-height: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.span-weigth {
+  font-weight: 700;
+}
+
+/** input **/
+
+.inp {
+  display: block;
+  width: 100%;
+  padding: 1.25rem 1rem;
+  margin-bottom: 0.813rem;
+  border: 1px solid black;
+  border-radius: 0.2rem;
+}
+
+.inp::placeholder {
+  font-weight: 700;
+}
+
+/** containers **/
+
+.container {
+  padding: var(--spc-bdy-top) var(--spc-bdy-sides) var(--spc-bdy-bottom);
+}
+
+.container-learn {
+  max-width: 492px;
+}
+
+@media (min-width: 1200px) {
+  .container-login {
+    width: 33.63rem;
+  }
+}
+
+/** ========= own styles =========**/
+
+@media (min-width: 1200px) {
+  main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4.625rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  main {
+    justify-content: space-evenly;
+  }
+}
+
+/** learn code **/
+
+.learn-code {
+  margin-bottom: 4rem;
+}
+
+/** login **/
+
+.login-form {
+  background-color: var(--bgk-frm);
+  padding: var(--spc-frm);
+  border-radius: 0.5rem;
+}
+
+/** warning **/
+
+.warning {
+  text-align: center;
+}
+
+.p-warning {
+  color: var(--Grayish-Blue);
+  font-size: 0.7rem;
+}
+
+.span-color {
+  color: var(--Red);
+  font-weight: 700;
+}
